@@ -2,11 +2,12 @@ import React from "react";
 import Card from "@/components/card/card";
 import Fashion from "@/components/fashion/fashion";
 import CategoriesSection from "@/components/categoriesSection/categoriesSection";
+import { prisma } from "@/utils/prismaDb";
 
 
-export default function Home() {
+export default async function Home() {
 
-
+const products=await prisma.product.findMany({orderBy:{id:"desc"}})
   
   return (
     <main className="w-full flex flex-col  justify-center items-center overflow-x-hidden  ">
@@ -21,11 +22,10 @@ export default function Home() {
             Most Featured Bags
           </h1>
           <div className="py-12 grid grid-cols-4 items-center mmd:grid-cols-2 mmd:gap-y-10 xs:gap-y-20">
-    
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+    {products.slice(0,4).map((product)=>{
+
+      return(<Card product={product} key={product} />)
+    })}
       
           </div>
         </div>

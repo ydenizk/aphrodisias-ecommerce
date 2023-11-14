@@ -4,8 +4,11 @@ import Link from "next/link";
 import TopSection from "@/components/topSection/topSection";
 import SideNavbar from "@/components/sideNavbar/sideNavbar";
 import { NavProvider } from "@/context/NavContext";
-import SignInSide from "@/components/signInSide/signInSide";
+
 import Footer from "@/components/footer/footer";
+import ShoppingCartButton from "@/components/shoppingCartButton/shoppingCartButton";
+import { NextAuthProvider } from "@/components/providers/providers";
+
 
 export const metadata = {
   title: "Aphodisias",
@@ -16,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="relative">
+        <NextAuthProvider>
         <NavProvider>
           <div className="mx-auto w-full px-4 ">
             <div className="w-full h-8 border-b text-right leading-8 ">
@@ -23,13 +27,17 @@ export default function RootLayout({ children }) {
                 Contact us
               </Link>
             </div>
-            <TopSection />
+            <TopSection>
+          
+              <ShoppingCartButton />
+            </TopSection>
           </div>
           <SideNavbar />
-          <SignInSide />
+   
           {children}
           <Footer />
         </NavProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

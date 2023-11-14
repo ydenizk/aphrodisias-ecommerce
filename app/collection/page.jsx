@@ -2,8 +2,15 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import Card from '@/components/card/card';
+import { prisma } from '@/utils/prismaDb';
 
-function CollectionPage() {
+async function CollectionPage() {
+
+const products=await prisma.product.findMany({
+  orderBy:{id:"desc"}
+})
+
+
   return (
     <div className="w-full mx-4">
     <div className="flex-col-reverse justify-center items-center gap-8 py-6 mx-auto w-full ">
@@ -19,6 +26,7 @@ function CollectionPage() {
           alt="cat"
           className="absolute object-contain"
         />
+
       </div>
     
     </div>
@@ -27,13 +35,15 @@ function CollectionPage() {
     </div>
 
     <div className="py-8 mb-8 grid grid-cols-4  items-center mmd:grid-cols-2 mmd:gap-10  xs:gap-20">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {products.slice(0,4).map((product)=>{
+
+        return(  <Card product={product} key={product.id} />
+
+        )
+      })}
+    
+    
+   
     </div>
   </div>
 );
