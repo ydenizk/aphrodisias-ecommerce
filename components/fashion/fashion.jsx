@@ -69,9 +69,11 @@ function Fashion() {
     : "-translate-x-[500px]";
 
   return (
-    <div className="flex  items-center justify-center my-8 ">
-      <div className=" w-full grid grid-cols-2 mx-8 gap-2">
-        <div ref={refImage} className="relative w-[540px] h-[819px] mx-auto">
+    <div className="flex  items-center justify-center my-8 mmd:border-b mmd:pb-20 ">
+      <div className=" w-full grid grid-cols-2 mx-8 gap-2 mmd:grid-cols-1 mmd:gap-24 mmd:mx-0  ">
+        <div ref={refImage} className="relative  w-[540px] h-[819px] mx-auto
+        xl:w-[480px] xl:h-[720px] mmd:w-[540px]   sm:w-[440px] sm:h-[640px]
+        ">
           <Image
             src="/fashion-2.jpg"
             fill
@@ -83,26 +85,29 @@ function Fashion() {
 
         <div
           className="flex justify-center items-center h-full w-full px-4 
-            tracking-wide text-center"
-        >
+            tracking-wide text-center ml-2 xl:text-right mmd:text-center"
+         >
           <div>
             <h1
               ref={refh1}
               className={`text-6xl text-center uppercase font-serif mb-16 leading-relaxed 
-              transition-all duration-500  ${firstParagraphClasses}`}
+              transition-all duration-500 lg:text-4xl xl:text-right mmd:text-center mmd:mb-12  ${firstParagraphClasses}`}
             >
               Experience ONE OF A KIND
             </h1>
             <p
               ref={refSecondParagraph}
-              className={`leading-6 text-center text-sm   transition-all duration-500    ${secondParagraphClasses}`}
+              className={`leading-6 text-center text-sm xl:text-right  mmd:text-center  transition-all duration-500    ${secondParagraphClasses}`}
             >
               Aphrodisias sells a variety of beautifully made, modern and daily
               pieces with the most incredible stand-out bags. What makes Sorena
               so common is that every single bag is handmade by carefully
               approach.
             </p>
-            <Link href="/" className="border border-black p-3 transition hover:bg-slate-100   ">
+            <Link
+              href="/"
+              className="border border-black p-3 transition hover:bg-slate-100   "
+            >
               See the Whole Collection
             </Link>
           </div>

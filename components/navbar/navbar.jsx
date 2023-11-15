@@ -18,8 +18,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`w-full flex justify-center items-center h-16 transition-all border-b
-     lg:bg-bgcolor   ${
+      className={`w-full flex justify-center items-center h-16 transition-all 
+     lg:bg-white   ${
        searchOpen ? "lg:h-16 lg:overflow-visible" : "lg:h-0 lg:overflow-hidden"
      } `}
     >
@@ -31,13 +31,13 @@ function Navbar() {
         <li className="px-2 tracking-wide">
           <Link
             href="/"
-            className="hover:text-red-700 transition uppercase font-bold"
+            className=" hover:text-red-900 transition uppercase font-bold"
           >
             Home
           </Link>
         </li>
         <li
-          className="px-2 tracking-wide uppercase font-bold transition hover:text-red-700   flex items-center relative"
+          className="px-2 tracking-wide uppercase font-bold transition  hover:text-red-900   flex items-center relative"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -47,80 +47,56 @@ function Navbar() {
             <div className="absolute top-2 -left-4   ">
               <ul className=" w-64 text-customWhite border bg-white  mt-9  ">
                 <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                  <Image
-                    src="/gift.jpg"
-                    width={35}
-                    height={35}
+                <div className="relative w-10 h-10">
+                   <Image
+                    src="/drop-shoulder.jpg"
+                  fill
                     alt="gift"
-                    className="border rounded "
+                    className=" absolute object-cover  "
                   />
+                </div>
+                 
                   <Link
-                    href="/bags/"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition hover:text-red-800 "
+                    href="/categories/shoulderbags"
+                    className="whitespace-nowrap text-base  capitalize font-light  transition  hover:text-red-900 "
                   >
                     Shoulder bags
                   </Link>
                 </li>
                 <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                  <Image
-                    src="/gift.jpg"
-                    width={35}
-                    height={35}
+                <div className="relative w-10 h-10">
+                   <Image
+                  src="/drop-travel.jpg"
+                  fill
                     alt="gift"
-                    className="border rounded "
+                    className=" absolute object-cover  "
                   />
+                </div>
                   <Link
-                    href="/bags/"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition hover:text-red-800 "
+                              href="/categories/travelbags"
+                    className="whitespace-nowrap text-base  capitalize font-light  transition  hover:text-red-900 "
                   >
-                    Shoulder bags
+                   Travel Bags
                   </Link>
                 </li>
                 <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                  <Image
-                    src="/gift.jpg"
-                    width={35}
-                    height={35}
+                <div className="relative w-10 h-10">
+                   <Image
+                src="/drop-sport.jpg"
+                  fill
                     alt="gift"
-                    className="border rounded "
+                    className=" absolute object-cover  "
                   />
+                </div>
                   <Link
-                    href="/bags/"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition hover:text-red-800 "
+                     href="/categories/daypacks"
+                    className="whitespace-nowrap text-base  capitalize font-light  transition  hover:text-red-900 "
                   >
-                    Shoulder bags
+                   daypacks
                   </Link>
                 </li>
-                <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                  <Image
-                    src="/gift.jpg"
-                    width={35}
-                    height={35}
-                    alt="gift"
-                    className="border rounded "
-                  />
-                  <Link
-                    href="/bags/"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition hover:text-red-800 "
-                  >
-                    Shoulder bags
-                  </Link>
-                </li>
-                <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                  <Image
-                    src="/gift.jpg"
-                    width={35}
-                    height={35}
-                    alt="gift"
-                    className="border rounded "
-                  />
-                  <Link
-                    href="/bags/"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition hover:text-red-800 "
-                  >
-                    Shoulder bags
-                  </Link>
-                </li>
+             
+           
               </ul>
             </div>
           )}
@@ -143,7 +119,7 @@ function Navbar() {
         <li className="px-2 tracking-wide">
           <Link
             href="/menu"
-            className="hover:text-red-700 transition uppercase font-bold "
+            className=" hover:text-red-900 transition uppercase font-bold "
           >
             Collection
           </Link>
@@ -151,7 +127,7 @@ function Navbar() {
         <li className="px-2 tracking-wide">
           <Link
             href="/#kartal"
-            className="hover:text-red-700 transition uppercase font-bold scroll-smooth"
+            className=" hover:text-red-900 transition uppercase font-bold scroll-smooth"
           >
             About
           </Link>
@@ -159,8 +135,8 @@ function Navbar() {
 
         <li className="px-2 tracking-wide">
           <Link
-            href="/contact"
-            className="whitespace-nowrap hover:text-red-700 transition uppercase font-bold"
+            href="/categories/giftcards"
+            className="whitespace-nowrap hover:text-red-900 transition uppercase font-bold"
           >
             Gift Cards
           </Link>

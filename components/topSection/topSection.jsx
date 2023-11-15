@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import Navbar from "../navbar/navbar";
 import SearchBar from "../searchBar/searchBar";
 import { NavContext } from "@/context/NavContext";
@@ -69,7 +69,7 @@ function TopSection({ children }) {
             </button>
           </div>
 
-          <div className="w-48 h-24 relative  ">
+          <div className="w-48 h-24 relative xs:ml-12 xs:w-40  ">
             <Image
               src="/logo-3.png"
               fill
@@ -91,7 +91,7 @@ function TopSection({ children }) {
                 alt="profile"
                 width={30}
                 height={30}
-                className="rounded-full mr-2"
+                className="rounded-full mr-2 xs:mr-1"
               />
             ) : (
               <button>
@@ -113,15 +113,16 @@ function TopSection({ children }) {
             )}
             {/* sign in side  */}
             <div
-              className={`absolute  -left-24 top-0 z-10  overflow-hidden  ${
-                signInOpen ? "w-24  " : "w-0 hidden  "
+              className={`absolute  -left-24 top-0 z-10  overflow-hidden xs:-left-22  ${
+                signInOpen ? "w-24  xs:w-20 xs:ml-5" : "w-0 hidden  "
               }     
               transition-all duration-400 bg-white`}
             >
               {status === "authenticated" ? (
                 <button
-                  onClick={() => signOut({callbackUrl:"/"})}
-                  className=" transition hover:bg-gray-400   p-1 px-3 shadow-md text-black bg-gray-300 text-sm rounded ml-1"
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  className=" transition hover:bg-gray-400  p-1 px-3 shadow-md text-black bg-gray-300 
+                  text-sm rounded ml-1 xs:text-xs "
                 >
                   Sign Out
                 </button>

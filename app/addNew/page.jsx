@@ -96,14 +96,15 @@ async function AddNewPage() {
             required
             name="catName"
             type="text"
-            className="mb-2 appearance-none outline-none mt-1 bg-slate-300 text-right
+            className="mb-2 appearance-none outline-none mt-1 bg-slate-300 text-center
               rounded p-1 px-4 text-slate-600"
           >
             <option value="">Select A Category</option>
             <option value="shoulder bags">Shoulder bags</option>
             <option value="travel bags">Travel bags</option>
             <option value="daypacks">Daypacks</option>
-            <option value="sports bags">Sports bags</option>
+            <option value="giftcards">Giftcards</option>
+     
           </select>
           <AddNewButton className=""></AddNewButton>
         </div>

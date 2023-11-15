@@ -10,8 +10,8 @@ const isNew=Date.now() - new Date(product.createdAt).getTime() < 1000 * 60 *60 *
 
 
   return (
-    <div className="flex flex-col gap-2 items-center text-center mb-16">
-      <div className="h-auto w-auto p-10  bg-bgcolor xl:p-4 lg:p-1 mmd:p-10 sm:p-2 xs:p-1">
+    <div className="flex flex-col gap-2 items-center  text-center mb-16">
+      <div className="h-auto w-auto p-10  bg-bgcolor transition duration-400 hover:bg-gray-200 xl:p-4 lg:p-1 mmd:p-10 sm:p-2 xs:p-1">
         <Link href={`/collection/${product.id}`}>
           <div className="h-60 w-48  relative mx-auto xs:h-48 xs:w-36">
           <Image

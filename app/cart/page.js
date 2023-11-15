@@ -60,7 +60,7 @@ export default async function CartPage() {
           </div>
 
           <Link
-            href="/"
+            href="/payment"
             className="uppercase bg-gray-400 w-1/2 p-3 text-center text-blackk
          mx-auto  mt-12 transition hover:bg-gray-500 duration-400 cursor-pointer"
           >

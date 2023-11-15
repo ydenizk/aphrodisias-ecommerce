@@ -13,31 +13,34 @@ async function CategoryPage({params:{categoryName}}) {
   
 
   return (
-    <div className="w-full mx-4">
-      <div className="flex gap-8 py-6 ">
-        <div className="w-[640px] h-[426px] relative">
+    <div className="w-full justify center items-center">
+<div className="px-4 mx-auto">   
+      <div className="flex gap-4 py-6 mx-2 justify-center xs:items-center  xs:gap-2 " >
+        <div className="w-[720px] h-[420px] relative">
           <Image
-            src="/shoulder-2.jpg"
+            src={category.categoryImg}
             fill
             alt="cat"
-            className="absolute object-contain"
+            className="absolute object-cover"
           />
         </div>
         <div className="w-64">
-          <h1 className="uppercase text-5xl h-full  w-fullfont-serif  ">
-            The world of {decodeURIComponent(category.categoryName)}
+          <h1 className="uppercase text-5xl h-full  w-fullfont-serif pr-2  sm:text-4xl  xs:text-3xl">
+            The world of {category.catName}
           </h1>
         </div>
       </div>
       <div className="w-full text-left mt-10">
-        <h1 className="text-3xl font-semibold tracking-wide capitalize">   {decodeURIComponent(category.categoryName)}</h1>
+        <h1 className="text-3xl font-semibold tracking-wide capitalize">   {category.catName}</h1>
       </div>
 
-      <div className="py-8 mb-8 grid grid-cols-4  items-center mmd:grid-cols-2 mmd:gap-10  xs:gap-20">
+      <div className="py-8 mb-8 grid grid-cols-4  justify-center  mmd:grid-cols-2
+       mmd:gap-10  xs:gap-6   ">
      {category?.products.map((product)=>{
 
       return(<Card product={product}  />)
      })}
+      </div>
       </div>
     </div>
   );

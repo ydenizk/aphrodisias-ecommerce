@@ -1,12 +1,21 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 
 export default function AddToCartButton({ productId, incrementProductQty }) {
   //client component de server action çağırdığımız için usetransisition kullanılması gereıyormus.
   //error ve loading statte(pending) ihallediyor  yapıyor
   const [isPending, startTransition] = useTransition();
   const [success, setSuccess] = useState(false);
+
+  useEffect(()=>{
+    if(success){
+      setTimeout(() => {
+        setSuccess(false)
+      }, 4000);
+    }
+
+  },[success])
 
   return (
     <div className="mt-6 w-full ">
