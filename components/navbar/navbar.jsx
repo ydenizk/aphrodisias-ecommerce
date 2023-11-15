@@ -126,7 +126,7 @@ function Navbar() {
         </li>
         <li className="px-2 tracking-wide">
           <Link
-            href="/#kartal"
+            href="/about"
             className=" hover:text-red-900 transition uppercase font-bold scroll-smooth"
           >
             About
