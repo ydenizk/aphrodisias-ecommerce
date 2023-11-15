@@ -118,7 +118,7 @@ function Navbar() {
         </li>
         <li className="px-2 tracking-wide">
           <Link
-            href="/menu"
+            href="/collection"
             className=" hover:text-red-900 transition uppercase font-bold "
           >
             Collection
