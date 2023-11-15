@@ -32,7 +32,7 @@ export default async function Searchpage({ searchParams: { query } }) {
         </div>
         <div className="w-[720px] h-[480px] relative mx-auto">
           <Image
-            src="/collection.jpg"
+            src="/collectionn.jpg"
             fill
             alt="cat"
             className="absolute object-contain"
