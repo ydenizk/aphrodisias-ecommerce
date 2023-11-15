@@ -38,7 +38,7 @@ async function CategoryPage({params:{categoryName}}) {
        mmd:gap-10  xs:gap-6   ">
      {category?.products.map((product)=>{
 
-      return(<Card product={product}  />)
+      return(<Card product={product} key={product.id}  />)
      })}
       </div>
       </div>
