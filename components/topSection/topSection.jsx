@@ -7,6 +7,7 @@ import { NavContext } from "@/context/NavContext";
 import Image from "next/image";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link"
 
 ///burada server component olan shoppingcart button ı almak için children metodu kullandık.ÖNEMLİ!!çalışmıor yoksa
 function TopSection({ children }) {
@@ -68,15 +69,16 @@ function TopSection({ children }) {
               </svg>
             </button>
           </div>
-
-          <div className="w-48 h-24 relative xs:ml-12 xs:w-40  ">
-            <Image
-              src="/logo-3.png"
-              fill
-              alt="logo"
-              className="object-cover "
-            />
-          </div>
+          <Link href="/">
+            <div className="w-48 h-24 relative xs:ml-12 xs:w-40  ">
+              <Image
+                src="/logo-3.png"
+                fill
+                alt="logo"
+                className="object-cover "
+              />
+            </div>
+          </Link>
         </div>
 
         <div className="flex justify-end items-center flex-1 ">

@@ -5,6 +5,7 @@ import { NavContext } from "@/context/NavContext";
 import Link from "next/link";
 import Image from "next/image";
 import SearchBar from "../searchBar/searchBar";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const { open, setOpen, searchOpen } = useContext(NavContext);
@@ -14,6 +15,24 @@ function Navbar() {
   };
   const handleMouseLeave = () => {
     setOpen(false);
+  };
+
+  // Animation variants for the dropdown
+  const dropdownVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
   };
 
   return (
@@ -37,69 +56,76 @@ function Navbar() {
           </Link>
         </li>
         <li
-          className="px-2 tracking-wide uppercase font-bold transition  hover:text-red-900   flex items-center relative"
+          className="px-2 tracking-wide uppercase font-bold  flex items-center relative"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
           Bags
           {/* Dropdown menu */}
-          {open && (
-            <div className="absolute top-2 -left-4   ">
-              <ul className=" w-64 text-customWhite border bg-white  mt-9  ">
-                <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                <div className="relative w-10 h-10">
-                   <Image
-                    src="/drop-shoulder.jpg"
-                  fill
-                    alt="gift"
-                    className=" absolute object-cover  "
-                  />
-                </div>
-                 
-                  <Link
-                    href="/categories/shoulderbags"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition  hover:text-red-900 "
-                  >
-                    Shoulder bags
-                  </Link>
-                </li>
-                <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                <div className="relative w-10 h-10">
-                   <Image
-                  src="/drop-travel.jpg"
-                  fill
-                    alt="gift"
-                    className=" absolute object-cover  "
-                  />
-                </div>
-                  <Link
-                              href="/categories/travelbags"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition  hover:text-red-900 "
-                  >
-                   Travel Bags
-                  </Link>
-                </li>
-                <li className="p-2 px-6 flex  items-center gap-3 my-1 text-black   ">
-                <div className="relative w-10 h-10">
-                   <Image
-                src="/drop-sport.jpg"
-                  fill
-                    alt="gift"
-                    className=" absolute object-cover  "
-                  />
-                </div>
-                  <Link
-                     href="/categories/daypacks"
-                    className="whitespace-nowrap text-base  capitalize font-light  transition  hover:text-red-900 "
-                  >
-                   daypacks
-                  </Link>
-                </li>
-             
-           
-              </ul>
-            </div>
-          )}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                className="absolute top-2 -left-4"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={dropdownVariants}
+              >
+                <ul className="w-64 text-customWhite border bg-white mt-9 font-normal">
+                  {/* Dropdown items */}
+                  <li className="p-2 px-6 flex  items-center gap-3  text-black transition duration-500 hover:bg-neutral-200  ">
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/drop-shoulder.jpg"
+                        fill
+                        alt="gift"
+                        className=" absolute object-cover  "
+                      />
+                    </div>
+
+                    <Link
+                      href="/categories/shoulderbags"
+                      className="whitespace-nowrap text-base capitalize "
+                    >
+                      Shoulder bags
+                    </Link>
+                  </li>
+                  <li className="p-2 px-6 flex  items-center gap-3  text-black  transition duration-500 hover:bg-neutral-200  ">
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/drop-travel.jpg"
+                        fill
+                        alt="gift"
+                        className=" absolute object-cover  "
+                      />
+                    </div>
+                    <Link
+                      href="/categories/travelbags"
+                      className="whitespace-nowrap text-base  capitalize "
+                    >
+                      Travel Bags
+                    </Link>
+                  </li>
+                  <li className="p-2 px-6 flex  items-center gap-3  text-black  transition duration-500 hover:bg-neutral-200  ">
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/drop-sport.jpg"
+                        fill
+                        alt="gift"
+                        className=" absolute object-cover  "
+                      />
+                    </div>
+                    <Link
+                      href="/categories/daypacks"
+                      className="whitespace-nowrap text-base  capitalize "
+                    >
+                      daypacks
+                    </Link>
+                  </li>
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
           {/* Dropdown END */}
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -17,8 +17,9 @@ module.exports = {
     },
     backgroundImage: {
       'banner': 'url("/banner-4.jpg")',
-     
+  
     },
+  
     colors:{
    bgcolor:'rgb(239,239,239)',
       blackk:"rgb(26,26,33)"
@@ -39,8 +40,6 @@ module.exports = {
 
       'xs': { 'max': '480px'},
       
-
-   
     },
   },
   plugins: [],
